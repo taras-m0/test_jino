@@ -11,6 +11,9 @@ yarn install
 # Preview on device
 yarn serve
 
+#if error, run
+yarn lint --fix
+
 # open browser http://localhost:8081
 
 ```
