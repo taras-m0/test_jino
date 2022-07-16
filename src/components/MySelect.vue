@@ -1,6 +1,6 @@
 <template lang="pug">
   v-select(
-    v-bind="{ ...$attrs , appendToBody: false, clearable: false /*, closeOnSelect: false, multiple: true, taggable: true, dropdownShouldOpen: dropdownShouldOpen */}"
+    v-bind="{ ...$attrs , appendToBody: false, clearable: false }"
     :options="plainOptions"
     :disabled="disabled"
     v-on="{ ...$listeners }"
@@ -89,8 +89,6 @@ export default {
     searchEvents(events) {
       return {
         ...events,
-        // 'blur': this.onSearchBlur,
-        // 'focus': this.onSearchFocus,
         input: () => {},
       };
     },
@@ -98,19 +96,10 @@ export default {
     searchAttrs(attrs) {
       return { ...attrs, value: this.searchString };
     },
-    dropdownShouldOpen(VueSelect) {
-      return VueSelect.open;
-    },
-
-    trace(...args) {
-      console.log("trace", ...args);
-      return "";
-    },
   },
 
   mounted() {
     // this.$refs.select.open = true;
-    console.log("mounted");
   },
 };
 </script>
